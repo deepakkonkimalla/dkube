@@ -167,8 +167,7 @@ def launch_training_job(name:str, autogenerate=False,
     create_training_job(environ, job)
     logger.info("User {} Job {} created successfully \n".format(environ.user, job.name))
 
-    runname = '{}-{}'.format('run', name)
-    state, reason = wait_for_training_job(environ, runname)
+    state, reason = wait_for_training_job(environ, name)
     logger.info("User {} Job {} finished with status {}, reason {} \n".format(environ.user, runname, state, reason))
 
 
